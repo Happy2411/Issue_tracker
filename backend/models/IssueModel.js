@@ -5,10 +5,11 @@ const mySchema = new Schema({
       type: String,
       assignedTo:String,
       team:String,
-      assignBy:String,
-      CreatedAt:String,
-      Date:Number,
+      status: {type : String, default : 'pending'},
+      assignedBy:String,
+      assignedTo: String,
+      createdAt:Date
       
 })
 // name of collection
-module.exports = model('users',mySchema);
+module.exports = model('issue',mySchema);

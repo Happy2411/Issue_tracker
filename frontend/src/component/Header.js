@@ -38,6 +38,16 @@ const Header = () => {
                 Signup
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/issueform">
+                Register
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/track">
+                Track
+              </NavLink>
+            </li>
            
            
             

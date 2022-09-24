@@ -1,15 +1,38 @@
 import { Formik } from "formik"
 import React from "react"
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+// import { Await } from "react-router-dom"
 // import './Signup.css';
 
 
 
 const Signup = () => {
-  const loginSubmit =  (formdata) => {
+  const navigate=useNavigate();
+  const loginSubmit = async (formdata,{resetForm}) => {
     console.log(formdata)
     // resetForm()
 
-    
+    const response = await fetch('http://localhost:5000/user/add', {
+      method : 'POST',
+      body : JSON.stringify(formdata),
+      headers : {
+        'Content-Type' : 'application/json'
+      }
+    })
+
+    if(response.status === 200){
+      console.log('request sent');
+      resetForm();
+      Swal.fire({
+        icon : 'success',
+        title : 'Nice',
+        text : 'User Registered!!'
+      })
+      navigate('/login');
+    }else{
+      console.log('some error occured');
+    }
 
   }
 

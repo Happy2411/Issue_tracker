@@ -1,6 +1,6 @@
 const express = require('express');
 const userRouter = require('./Router/userRouter');
-
+const issueRouter = require('./Router/issueRouter');
 const cors = require('cors');
 
 // two type of path
@@ -19,6 +19,7 @@ app.use(cors({
 }));
 
 app.use('/user', userRouter);
+app.use('/issue', issueRouter);
 // app.use('/product', productRouter);
 // localhost:5000/user/add
 
