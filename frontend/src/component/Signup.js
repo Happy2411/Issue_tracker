@@ -37,14 +37,14 @@ const Signup = () => {
   }
 
   return (
-    <div>
-  
+    <div className="edit" >
       <Formik initialValues={{name:"",age:"", email: "", password: "" }} onSubmit={loginSubmit}>
         {({ handleSubmit, values, handleChange }) => (
-            <body className="body-style">
-          <form onSubmit={handleSubmit}>
             
-            <div className="card">
+          <form onSubmit={handleSubmit}>
+          <div className='container' style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+       <div className="card" >
+            
                 <h2 className="title">Signup Here</h2>
             <label>Name</label>
              
@@ -61,12 +61,15 @@ const Signup = () => {
               Submit
             </button>
             </div>
+          </div>
           </form>
-          </body>
+          
+        
           
         )}
       </Formik>
-    </div>
+      </div>
+    
   )
 }
 

@@ -3,7 +3,7 @@ import React from 'react'
 // import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const Register = () => {
+const IssueForm = () => {
   
   // const navigate = useNavigate();
   
@@ -40,41 +40,42 @@ const Register = () => {
   }
 
   return (
-    <div className="container pt-5">
-      <div className="card">
-        <div className="card-body">
-
+    <div className="issue-design" >
           <Formik 
             initialValues={{title : '', type : '', assignedTo: '', team : "", assignedBy:"",createdAt: new Date()}}
             onSubmit={userSubmit}
           >
             { ({values, handleSubmit, handleChange}) => (
               <form onSubmit={handleSubmit}>
+                <div className="container" style={{display:'flex',justifyContent:'center',alignItems:'center'}} >
+      <div className="card " style={{width:600}} >
+        <div className="card-body" style={{width:500}}>
               <h3 className='text-center'>Team Issues</h3>
               <label>Title</label>
-              <input id="title" value={values.title} onChange={handleChange} className='form-control mb-3' />
-              <label>Type</label>
-              <input id="type" value={values.type} onChange={handleChange} className='form-control mb-3' />
+              <input id="title" value={values.title} onChange={handleChange} className='form-control mb-2' />
+              <label>Type</label>                                                                         
+              <input id="type" value={values.type} onChange={handleChange} className='form-control mb-2' />
               <label>AssignedTO</label>
-              <input id="assignedTo" value={values.assignedTo} onChange={handleChange}  className='form-control mb-3' />
+              <input id="assignedTo" value={values.assignedTo} onChange={handleChange}  className='form-control mb-2' />
               <label>Team</label>
-              <input id="team" value={values.team} onChange={handleChange} className='form-control mb-3' />
+              <input id="team" value={values.team} onChange={handleChange} className='form-control mb-2' />
               <label>Status</label>
-              <input id="status" value={values.status} onChange={handleChange} className='form-control mb-3' />
+              <input id="status" value={values.status} onChange={handleChange} className='form-control mb-2' />
               <label>assignedBy</label>
-              <input id="assignedBy" value={values.assignedBy} onChange={handleChange} className='form-control mb-3' />
+              <input id="assignedBy" value={values.assignedBy} onChange={handleChange} className='form-control mb-2' />
 
               
-              <button type='submit' className='btn btn-primary mt-5'>Submit</button>
+              <button type='submit' className='btn btn-primary mt-2'>Submit</button>
+              </div>
+              </div>
+              </div>
             </form>
             ) }
           </Formik>
-          
+          </div>
 
-        </div>
-      </div>
-    </div>
+       
   )
 }
 
-export default Register
+export default IssueForm

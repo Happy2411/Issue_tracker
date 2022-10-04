@@ -2,6 +2,7 @@
 import { Formik } from "formik"
 import React from "react"
 import Swal from "sweetalert2"
+import './Login.css';
 
 const Login = () => {
 
@@ -36,10 +37,16 @@ const Login = () => {
   }
 
   return (
-    <div>
+    
+    <div className="body-style">
       <Formik initialValues={{ email: "", password: "" }} onSubmit={loginSubmit}>
         {({ handleSubmit, values, handleChange }) => (
           <form onSubmit={handleSubmit}>
+             
+         
+            <div className="container" style={{display:'flex',justifyContent:"center",alignItems:"center"}}>
+            <div className="card">
+            <h3 className='text-center'>Login</h3>
             <label>Email</label>
             <input className="form-control" id="email" value={values.email} onChange={handleChange} />
 
@@ -49,10 +56,15 @@ const Login = () => {
             <button type="submit" className="btn btn-primary mt-4">
               Submit
             </button>
+            </div>
+            </div>
+            
           </form>
         )}
       </Formik>
-    </div>
+      </div>
+    
+    
   )
 }
 

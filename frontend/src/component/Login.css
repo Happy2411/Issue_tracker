@@ -1,0 +1,35 @@
+.card{
+    border: 2px solid black;
+    width: 30%;
+    background-color: #efe4f1f8;
+    padding: 30px;
+    margin: 10px;
+    box-shadow: inset 2px 3px 4px 5px snow;
+    box-sizing: border-box;
+
+}
+.form-control{
+    margin-top: 8px;
+        border-bottom: 2px solid green;
+        border-radius: 4px;
+        color:rgba(166, 161, 161, 0.132);
+
+        box-sizing: border-box;
+        width:100%;
+            padding: 10px;
+            box-sizing:border-box;
+            margin-bottom: 20px;
+            
+}
+ .body-style{
+    background-image: url(https://wallpaperaccess.com/full/1900901.jpg);
+    height:100vh;
+} 
+.edit{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/007/164/537/original/fingerprint-identity-sensor-data-protection-system-podium-hologram-blue-light-and-concept-free-vector.jpg);
+    height:100vh;
+} 
+.issue-design{
+    background-image: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/602890/36d5b751304eec3dcdf5682457b2034f6d04eb08.jpg);
+    height:110vh;
+}

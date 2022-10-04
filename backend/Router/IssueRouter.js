@@ -61,6 +61,18 @@ router.delete( '/delete/:id', (req, res) => {
     });
 });
 
+router.put( '/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body)
+    .then((result) => {
+        console.log(result);
+        res.json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 
 // router.post( '/authenticate', (req, res) => {
 

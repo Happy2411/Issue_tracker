@@ -31,10 +31,35 @@ const Track = () => {
       getDataFromBackend();
     }, []);
 
+    const updateStatus = async (newStatus, id) => {
+        const res = await fetch('http://localhost:5000/issue/update/'+id, {
+            method:"PUT",
+            body:JSON.stringify({
+                status : newStatus
+            }),
+            headers : {
+                'Content-Type' : 'application/json'
+            }
+        })
+
+        getDataFromBackend();
+    }
+
+    const getStatus = (status) => {
+        if(status.toLowerCase() === 'pending'){
+            return 'badge-danger'
+        }else if(status.toLowerCase() === 'solved'){
+            return 'badge-success'
+        }
+        else if(status.toLowerCase() === 'solved'){
+            return 'badge-warning'
+        }
+    } 
+
     const displayUsers = () => {
 
-        return <table className='table table-striped table-light'>
-            <thead>
+        return <table className='table table-striped table-light table-hover table-bordered'>
+            <thead className="table-dark">
                 <tr>
                     <th>title</th>
                     <th>type</th>
@@ -55,9 +80,12 @@ const Track = () => {
                             <td>{issue.type}</td>
                             <td>{issue.assignedTo}</td>
                             <td>{issue.team}</td>
-                            <td>{issue.status}</td>
+                            
                             <td>{issue.assignedBy}</td>
-                            <td>{issue.status}</td>
+                            <td>
+                            <span class={"badge rounded-pill d-inline "+getStatus(issue.status)}>{issue.status}</span>
+                            </td>
+                            
                             <td>
                                 <button className='btn btn-danger' onClick={() => { deleteUser(issue._id) }} >
                                     <i className="fas fa-trash"></i>
@@ -66,8 +94,8 @@ const Track = () => {
                             </td>
                             
                             <td>
-                                <button className='btn btn-primary'>
-                                    <i className="fas fa-pen"></i>
+                                <button className='btn btn-primary' onClick={e => updateStatus('solved', issue._id)}>
+                                    Solve
                                 </button>
                             </td>
                         </tr>

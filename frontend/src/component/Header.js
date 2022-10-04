@@ -10,7 +10,7 @@ const Header = () => {
       <div className="container">
         {/* Navbar brand */}
         <a className="navbar-brand" href="#">
-          Brand
+          Issue Tracker
         </a>
         {/* Toggle button */}
         <button
@@ -40,7 +40,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/issueform">
-                Register
+                IssueForm
               </NavLink>
             </li>
             <li className="nav-item">
